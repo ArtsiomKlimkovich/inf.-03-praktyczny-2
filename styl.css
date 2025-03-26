@@ -1,0 +1,30 @@
+*{
+    font-family: 'Verdana';
+}
+
+.motor{
+    display: block;
+    position: relative;
+    left: 15%;
+    width: 70%;
+    z-index: -1;
+}
+
+.baner{
+    color: rgb(0, 100, 0);
+    opacity: 0.9;
+    margin-top: 2%;
+    width: 75%;
+    height: 600px;
+    font-size: 120%;
+    scroll-behavior: auto;
+    box-shadow: 10px 10px 7px DimGray;
+}
+
+.prawy{
+    background-color: rgba(0, 100, 0, 0.6);
+    margin: 1%;
+    width: 15%;
+    height: 300px;
+    box-shadow: 10px 10px 7px DimGray;
+}
