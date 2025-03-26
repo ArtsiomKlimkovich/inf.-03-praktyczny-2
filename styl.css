@@ -28,3 +28,27 @@
     height: 300px;
     box-shadow: 10px 10px 7px DimGray;
 }
+
+.stopka{
+    background-color: rgba(60, 120, 160, 0.9);
+    color: white;
+    padding: 10px;
+}
+
+h1,h2{
+    text-align: center;
+    font-style: italic;
+}
+
+dt{
+    color: white;
+}
+
+dd {
+    padding: 1%;
+}
+
+dd:hover {
+    background-color: LightGreen;
+}
+

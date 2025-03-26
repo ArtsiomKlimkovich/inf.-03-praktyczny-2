@@ -16,7 +16,34 @@
         <h2>Gdzie pojechać?</h2>
         <!-- skrypt 1 -->
         <?php
-
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "motory";
+            
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+            
+            $sql = "SELECT nazwa, opis, poczatek, zrodlo FROM wycieczki INNER JOIN zdjecia ON wycieczki.id = zdjecia.id";
+            $result = $conn->query($sql);
+            
+            if ($result->num_rows > 0) {
+                echo "<dl>";
+                while ($row = $result->fetch_assoc()) {
+                    $nazwa = htmlspecialchars($row['nazwa']);
+                    $opis = htmlspecialchars($row['opis']);
+                    $poczatek = htmlspecialchars($row['poczatek']);
+                    $zrodlo = htmlspecialchars($row['zrodlo']);
+                    echo "<dt><a href='$zrodlo'>$nazwa, rozpoczyna się w $poczatek</a></dt>";
+                    echo "<dd>$opis</dd>";
+                }
+                echo "</dl>";
+            } else {
+                echo "Brak wyników.";
+            }
         ?>
     </section>
 
@@ -36,7 +63,29 @@
             <p>Wpisanych wycieczek: </p>
             <!-- skrypt 2 -->
             <?php
-
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "motory";
+                
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+                
+                $sql = "SELECT COUNT(id) AS liczba_wycieczek FROM wycieczki";
+                $result = $conn->query($sql);
+                
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    $liczba_wycieczek = htmlspecialchars($row['liczba_wycieczek']);
+                    echo "<p>Wpisanych wycieczek: $liczba_wycieczek</p>";
+                } else {
+                    echo "<p>Brak wycieczek.</p>";
+                }
+                
+                $conn->close();
             ?>
             <p>Użytkowników forum: 200</p>
             <p>Przesłanych zdjęć: 1300</p>
