@@ -1,47 +1,75 @@
-*{
-    font-family: 'Verdana';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.motor{
+.motor {
     display: block;
-    position: relative;
+    position: absolute;
     left: 15%;
     width: 70%;
     z-index: -1;
 }
 
-.baner{
-    color: rgb(0, 100, 0);
-    opacity: 0.9;
-    margin-top: 2%;
-    width: 75%;
-    height: 600px;
-    font-size: 120%;
-    scroll-behavior: auto;
-    box-shadow: 10px 10px 7px DimGray;
+.baner {
+    background-color: rgba(60, 120, 160, 0.9);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 150%;
 }
 
-.prawy{
+.baner h1 {
+    font-style: italic;
+}
+
+.content {
+    display: flex;
+    margin: 20px;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.lewy {
     background-color: rgba(0, 100, 0, 0.6);
-    margin: 1%;
-    width: 15%;
-    height: 300px;
+    width: 60%;
+    padding: 20px;
+    font-size: 120%;
     box-shadow: 10px 10px 7px DimGray;
+    overflow: auto;
 }
 
-.stopka{
+.prawa {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    justify-content: space-between;
+}
+
+.prawy {
+    background-color: rgba(0, 100, 0, 0.6);
+    margin-bottom: 20px;
+    box-shadow: 10px 10px 7px DimGray;
+    padding: 20px;
+    flex: 1;
+}
+
+.stopka {
     background-color: rgba(60, 120, 160, 0.9);
     color: white;
     padding: 10px;
+    text-align: center;
 }
 
-h1,h2{
+h1, h2 {
     text-align: center;
     font-style: italic;
 }
 
-dt{
+dt, dd {
     color: white;
+    margin-bottom: 10px;
 }
 
 dd {
@@ -52,3 +80,11 @@ dd:hover {
     background-color: LightGreen;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: yellow;
+}
